@@ -1,0 +1,512 @@
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Prevent zooming on mobile */
+input,
+button {
+    font-size: 16px;
+}
+
+
+/* Professional Header Section */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+
+nav .logo h2 {
+    color: #000;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+}
+
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+
+nav .nav-links a {
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+
+nav .nav-links a:hover {
+    color: #000;
+}
+
+
+.contact-btn {
+    border: 2px solid #000;
+    padding: 8px 15px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.contact-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* Home Section */
+#home {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+
+.hero-content h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* About Section */
+#about {
+    padding: 140px 50px;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 100px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+
+#about h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Services Section */
+#services {
+    padding: 0px 50px;
+    background-color: #f8f8f8;
+    text-align: center;
+    padding-top: 60px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+
+#services h2 {
+    color: #43a047;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+
+#services h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-bottom: 50px;
+    /* Add padding at the bottom to prevent cropping */
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    max-width: 320px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+
+.card-content {
+    padding: 20px;
+}
+
+
+.card-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.card-content h4 span {
+    font-size: 1.5rem;
+    color: #43a047;
+}
+
+
+.card-content p {
+    color: #666;
+}
+
+
+/* Contact Section */
+#contact {
+    background-color: #f4f4f4;
+    margin-top: 0px;
+    padding: 0px;
+    /* Add top padding to ensure the header doesn't overlap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Ensure the section takes up at least the full viewport height */
+}
+
+
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    padding: 50px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+
+.contact-form {
+    flex: 2;
+    padding-right: 20px;
+}
+
+
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.contact-form button {
+    background-color: #43a047;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.contact-form button:hover {
+    background-color: #388e3c;
+}
+
+
+.contact-info {
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* Add padding to both sides */
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+
+.contact-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Success Message Styling */
+#success-message {
+    background-color: white;
+    /* Match the contact form background */
+    border: 1px solid #ccc;
+    /* Match the input fields' border color */
+    padding: 50px;
+    /* Match the padding of the contact-container */
+    border-radius: 8px;
+    /* Match the border-radius of the contact-info */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    /* Match the box shadow of the contact-container */
+    text-align: center;
+    width: 100%;
+    /* Ensure it takes up the full width of the form */
+    box-sizing: border-box;
+    /* Include padding and borders in the width */
+}
+
+#success-message h2 {
+    font-size: 2rem;
+    /* Match the heading size of the contact-form */
+    margin-bottom: 20px;
+    color: #333333;
+    /* Dark grey text color */
+    font-weight: bold;
+}
+
+#success-message p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#success-message button {
+    background-color: #43a047;
+    /* Match the button color */
+    color: white;
+    padding: 10px 20px;
+    /* Match the button padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#success-message button:hover {
+    background-color: #388e3c;
+    /* Match the hover effect of the button */
+}
+
+/* Contact Form Styling */
+#contact-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    /* Ensure padding and border are included in the width */
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    /* Add sufficient margin to avoid overlap with content above */
+    width: 100%;
+    position: static;
+    /* Ensure it stays in the natural document flow */
+    bottom: 0;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav .logo h2 {
+        font-size: 1.5rem;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        /* Ensure adequate space below the last service card */
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    #contact {
+        flex-direction: column;
+        padding: 50px 20px 50px;
+        /* Ensure enough space at the top and bottom */
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    footer {
+        margin-top: 50px;
+        /* Ensure footer is well-separated from the content above */
+        position: static;
+        /* Keep the footer in the natural flow of the document */
+    }
+}

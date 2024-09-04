@@ -1,0 +1,379 @@
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Prevent zooming on mobile */
+input,
+button {
+    font-size: 16px;
+}
+
+/* Professional Header Section */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav .logo h2 {
+    color: #000;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links a {
+    color: #333;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #000;
+}
+
+.contact-btn {
+    border: 2px solid #000;
+    padding: 8px 15px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Introductory Visualizations Section */
+#intro-visuals {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#intro-visuals h1 {
+    font-size: 2.5rem;
+    color: #43a047;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+#intro-visuals p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.visuals-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.visual-item {
+    max-width: 300px;
+    text-align: center;
+}
+
+.visual-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.visual-item img:hover {
+    transform: translateY(-5px);
+}
+
+.visual-item p {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.intro-visuals-text {
+    font-size: 1.8rem;
+    /* Adjust the size as needed */
+}
+
+.visuals-grid p {
+    font-size: 1.2rem;
+    /* Adjust the size for the text under the images */
+}
+
+/* Overview, Benefits, and Case Studies Sections */
+#overview,
+#case-studies,
+#cta {
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#overview.dark-bg,
+#case-studies.dark-bg {
+    background-color: #f1f1f1;
+}
+
+#overview h2,
+#benefits h2,
+#case-studies h2,
+#cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#overview ul {
+    list-style: disc;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding-left: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#overview ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#overview h2+p {
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+}
+
+/* Benefits Section */
+#benefits {
+    background-color: #fff;
+    padding: 60px 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+.benefit-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.benefit-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    margin: 20px;
+    text-align: center;
+}
+
+.benefit-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-item h3 {
+    color: #43a047;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.benefit-item p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Case Studies */
+.case-study-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.case-study-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    margin: 20px;
+    text-align: center;
+}
+
+.case-study-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.case-study-item h3 {
+    color: #43a047;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.case-study-item p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Call to Action */
+#cta {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #43a047;
+}
+
+#cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.cta-btn {
+    background-color: #43a047;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    border: 2px solid #43a047;
+}
+
+.cta-btn:hover {
+    background-color: #388e3c;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav .logo h2 {
+        font-size: 1.5rem;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .visuals-grid {
+        flex-direction: column;
+    }
+
+    #overview ul {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .benefit-list,
+    .case-study-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit-item,
+    .case-study-item {
+        max-width: 90%;
+    }
+}
