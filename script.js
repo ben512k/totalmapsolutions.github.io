@@ -1,31 +1,30 @@
 // Smooth Scrolling for Internal Links Only
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault(); 
+        e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        const headerOffset = document.querySelector('header').offsetHeight;
-        const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
+        if (targetElement) {
+            const headerOffset = document.querySelector('header').offsetHeight;
+            const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
 
-        window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// ✅ New Tab Links (No Interference)
+// ✅ Let the browser handle ALL external links naturally
 document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-        // Prevent interfering with default behavior for external links
-        e.stopPropagation(); 
-        // Let the default behavior (new tab) happen naturally
-    });
+    link.removeEventListener('click', () => {});  // Remove any previously bound listeners
+    link.onclick = null; // Clear any other event binding
 });
 
-// ✅ Completely Remove Modal Image Behavior
+// ✅ Completely Disable Image Popups
 document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null; // Ensure no modal interference
+    img.onclick = null;
 });
 
 // Form Handling (No Changes Needed)
