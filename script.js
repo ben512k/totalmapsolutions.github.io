@@ -1,26 +1,34 @@
-// Smooth Scrolling Effect for Internal Links Only (Excludes External Links)
-document.querySelectorAll('nav a').forEach(anchor => {
+// Smooth Scrolling for Internal Links Only
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        e.preventDefault(); 
         const targetId = this.getAttribute('href');
-        
-        // If it's an internal link, handle smooth scrolling
-        if (targetId.startsWith("#")) {
-            e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            const headerOffset = document.querySelector('header').offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition - headerOffset;
+        const targetElement = document.querySelector(targetId);
+        const headerOffset = document.querySelector('header').offsetHeight;
+        const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
 
-            window.scrollBy({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-        // If it's an external link or opens a new tab, default behavior applies.
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     });
 });
 
-// Form Handling Logic (No Changes Here)
+// ✅ New Tab Links (No Interference)
+document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+        // Prevent interfering with default behavior for external links
+        e.stopPropagation(); 
+        // Let the default behavior (new tab) happen naturally
+    });
+});
+
+// ✅ Completely Remove Modal Image Behavior
+document.querySelectorAll(".portfolio-img").forEach(img => {
+    img.onclick = null; // Ensure no modal interference
+});
+
+// Form Handling (No Changes Needed)
 function handleFormSubmit(event) {
     event.preventDefault();
     var form = document.getElementById('contact-form');
@@ -51,16 +59,14 @@ function resetForm() {
     document.getElementById('success-message').style.display = 'none';
 }
 
-// Fix for Loading Hash Links on Page Load
+// Hash Navigation Fix (For Page Load)
 window.addEventListener('load', function () {
     const hash = window.location.hash;
     if (hash.startsWith("#")) {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
             const headerOffset = document.querySelector('header').offsetHeight;
-            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition - headerOffset;
-
+            const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'auto'
@@ -68,37 +74,3 @@ window.addEventListener('load', function () {
         }
     }
 });
-
-// ✅ Ensure No Freeze for Portfolio Links
-document.querySelectorAll(".portfolio-item a").forEach(link => {
-    link.addEventListener("click", function (event) {
-        // Allow all external links and links with target="_blank" without interruption
-        if (link.getAttribute("target") === "_blank") {
-            return; 
-        }
-        // Prevent default action only if it’s an internal link
-        if (link.getAttribute("href").startsWith("#")) {
-            event.preventDefault();
-        }
-    });
-});
-
-// ✅ Completely Disable Modal Behavior
-document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null; // Ensure no event listener on image click
-});
-
-// Failsafe for Modal (If Still Present)
-const closeBtn = document.querySelector(".close-btn");
-if (closeBtn) {
-    closeBtn.onclick = () => {
-        document.getElementById("modal").style.display = "none";
-    };
-}
-
-window.onclick = (event) => {
-    const modal = document.getElementById("modal");
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
