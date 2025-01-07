@@ -5,36 +5,26 @@
     box-sizing: border-box;
 }
 
+/* Portfolio Section Styles */
 #portfolio {
-    padding: 50px 20px;
+    padding: 50px;
     text-align: center;
-    background-color: #f8f9fa;
 }
 
-#portfolio h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.portfolio-grid {
+.portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr); /* Two maps per row */
+    gap: 20px; /* Adds space between the images */
+    justify-content: center;
 }
 
-.portfolio-item img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.portfolio-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+.portfolio-gallery img {
+    width: 100%; /* Makes each image scale to the column size */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 100%; /* Prevents the image from exceeding its container */
+    border: 2px solid #ddd; /* Optional: Adds a subtle border around the images */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
+    border-radius: 5px; /* Optional: Slightly rounds the corners */
 }
 
 
