@@ -653,3 +653,9 @@ footer {
         /* Keep the footer in the natural flow of the document */
     }
 }
+
+/* Disable all lightbox effects */
+.lightbox, .lightbox-enabled, .mfp-ready, .mfp-bg {
+    display: none !important;
+    pointer-events: none !important;
+}
