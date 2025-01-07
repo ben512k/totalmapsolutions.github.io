@@ -6,18 +6,32 @@
 }
 
 #portfolio {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Space between images */
-    padding: 20px;
+    text-align: center;
+    padding: 40px;
 }
 
-#portfolio img {
-    max-width: 100%; /* Ensure images scale to fit */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Prevent cropping */
-    border: 1px solid #ddd; /* Optional: Border for visual clarity */
+#portfolio h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
 }
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    max-width: 700px; /* Optional: Ensure that images don't get too large */
+    max-height: 496px; /* Optional: Ensure images fit well */
+    border: 2px solid #ddd; /* Optional: Adds a border around each image */
+    border-radius: 10px; /* Optional: Adds rounded corners to images */
+}
+
 
 body {
     font-family: 'Arial', sans-serif;
