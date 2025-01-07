@@ -61,6 +61,39 @@
 }
 
 
+/* Make portfolio images responsive */
+.portfolio-img {
+    width: 100%; /* Make the image take up the full width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+}
+
+/* Make modal images responsive */
+.modal-content {
+    width: 100%; /* Take up the full width of the modal */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't exceed its natural size */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: 100%; /* Ensure each portfolio item takes full width */
+    }
+
+    .portfolio-img {
+        width: 100%; /* Make the image take up the full screen width */
+        height: auto; /* Maintain the aspect ratio */
+        max-width: 100%;
+    }
+
+    /* Optional: Adjust modal size for mobile */
+    .modal-content {
+        width: 100%; /* Ensure modal image is responsive */
+        height: auto;
+        max-width: 100%;
+    }
+}
 
 
 
