@@ -1,4 +1,4 @@
-// Smooth Scrolling for Internal Links Only
+// Smooth Scrolling for Internal Links
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -17,11 +17,13 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Handling Portfolio Item Clicks (Open in New Tab Only)
+// Handling Portfolio Item Clicks (New Tab)
 document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
     link.addEventListener('click', function(event) {
-        // Open in a new tab, do not prevent default behavior
-        window.open(link.href, '_blank');
+        // Use `setTimeout` to open the link asynchronously, preventing blocking the UI thread
+        setTimeout(() => {
+            window.open(link.href, '_blank');
+        }, 0);
     });
 });
 
