@@ -17,14 +17,12 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Avoid Freezing and Let Browser Handle External Links Natively
+// Handling Portfolio Item Clicks (Open in New Tab Only)
 document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
-    link.setAttribute('rel', 'noopener noreferrer');  // Secure open
-});
-
-// Remove any interference with image popups
-document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null;  // Remove previous event listeners or popups
+    link.addEventListener('click', function(event) {
+        // Open in a new tab, do not prevent default behavior
+        window.open(link.href, '_blank');
+    });
 });
 
 // Form Handling (No Changes Needed)
