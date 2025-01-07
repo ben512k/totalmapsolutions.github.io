@@ -5,28 +5,19 @@
     box-sizing: border-box;
 }
 
-/* Portfolio Section Styles */
 #portfolio {
-    padding: 50px;
-    text-align: center;
-}
-
-.portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two maps per row */
-    gap: 20px; /* Adds space between the images */
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between images */
+    padding: 20px;
 }
 
-.portfolio-gallery img {
-    width: 100%; /* Makes each image scale to the column size */
-    height: auto; /* Maintains the aspect ratio */
-    max-width: 100%; /* Prevents the image from exceeding its container */
-    border: 2px solid #ddd; /* Optional: Adds a subtle border around the images */
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
-    border-radius: 5px; /* Optional: Slightly rounds the corners */
+#portfolio img {
+    max-width: 100%; /* Ensure images scale to fit */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Prevent cropping */
+    border: 1px solid #ddd; /* Optional: Border for visual clarity */
 }
-
 
 body {
     font-family: 'Arial', sans-serif;
