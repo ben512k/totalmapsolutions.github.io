@@ -10,6 +10,11 @@
     text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
 }
 
+#home h1, #home p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
+}
+
 /* Portfolio Section */
 #portfolio {
     text-align: center;
@@ -23,26 +28,28 @@
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Two equal columns */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     gap: 20px;
-    justify-items: center;  /* Center the images */
-    padding: 0 20px;
+    max-width: 1200px;  /* Optional: Adjusts the max width of the portfolio container */
+    margin: 0 auto;  /* Centers the grid on the page */
+    padding: 0 20px; /* Optional: Adds padding to avoid images being flush with container edges */
 }
 
 .portfolio-item {
-    display: flex;  /* Ensures the image fits well */
-    justify-content: center;
+    display: flex;
+    justify-content: center;  /* Centers the images inside the grid items */
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
-    max-width: 700px; /* Optional: Ensure images don’t get too large */
-    max-height: 496px; /* Optional: Ensure images fit well */
-    border: 2px solid #ccc;  /* Adds a light border */
-    border-radius: 8px;  /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    max-width: 700px; /* Ensures the images don’t stretch too much */
+    max-height: 496px; /* Prevents the images from becoming too tall */
+    border: 2px solid #ccc;  /* Adds a light border around the images */
+    border-radius: 8px;  /* Rounds the corners of the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the images */
 }
+
 
 
 body {
