@@ -17,7 +17,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
     var form = document.getElementById('contact-form');
     var formData = new FormData(form);
@@ -66,31 +66,30 @@ window.addEventListener('load', function () {
     }
 });
 
-// Completely remove modal behavior for images inside links with target="_blank"
+// Ensure smooth behavior and no freezing for images linking to new tabs
 document.querySelectorAll(".portfolio-item a").forEach(link => {
     link.addEventListener("click", function (event) {
-        if (link.getAttribute("target") === "_blank") {
-            return; // Open link in new tab as intended, no modal popup
-        }
-        event.preventDefault(); // Prevent default only if no new tab specified
+        if (link.getAttribute("target") !== "_blank") {
+            event.preventDefault(); // Prevent default only if not opening a new tab
+        } 
+        // If it is a new tab, let the default behavior proceed without interference
     });
 });
 
-// Disable modal functionality entirely for portfolio images
+// Completely remove modal behavior for images
 document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null; // Remove any existing click event on images
+    img.onclick = null; // Ensure no event is bound
 });
 
-// Close the modal when clicking the close button (if modal is ever used elsewhere)
+// Close modal if it ever appears (failsafe)
 const closeBtn = document.querySelector(".close-btn");
 if (closeBtn) {
-    closeBtn.onclick = function () {
+    closeBtn.onclick = () => {
         document.getElementById("modal").style.display = "none";
     };
 }
 
-// Close modal when clicking outside the image (failsafe)
-window.onclick = function (event) {
+window.onclick = (event) => {
     const modal = document.getElementById("modal");
     if (event.target === modal) {
         modal.style.display = "none";
