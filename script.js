@@ -29,19 +29,19 @@ function handleFormSubmit(event) {
         body: formData,
         mode: 'cors'
     })
-        .then(response => {
-            if (response.ok) {
-                console.log('Form submitted successfully.');
-                // Hide the form and show the success message
-                document.getElementById('contact-form').style.display = 'none';
-                document.getElementById('success-message').style.display = 'block';
-            } else {
-                console.error('Form submission failed.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    .then(response => {
+        if (response.ok) {
+            console.log('Form submitted successfully.');
+            // Hide the form and show the success message
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        } else {
+            console.error('Form submission failed.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 function resetForm() {
@@ -68,7 +68,6 @@ window.addEventListener('load', function () {
                 top: offsetPosition,
                 behavior: 'auto'
             });
-
         }
     }
 });
@@ -78,12 +77,14 @@ const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 const closeBtn = document.querySelector(".close-btn");
 
-// Add click event listener to each image
+// Prevent the modal from opening on image click, keeping links functional
 document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = function () {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    };
+    img.addEventListener('click', function (event) {
+        if (img.closest('a') && img.closest('a').getAttribute('target') === '_blank') {
+            return; // Allow default new tab behavior
+        }
+        event.preventDefault(); // Prevent the modal pop-up behavior
+    });
 });
 
 // Close the modal when clicking the close button
@@ -98,13 +99,11 @@ window.onclick = function (event) {
     }
 };
 
-// Disable lightbox behavior
+// Ensure links with target="_blank" open in a new tab without pop-up behavior
 document.querySelectorAll('.portfolio-item a').forEach(link => {
     link.addEventListener('click', function(event) {
         if (link.getAttribute('target') === '_blank') {
-            event.stopPropagation();  // Prevent lightbox effect
+            event.stopPropagation();  // Prevent pop-up and allow new tab opening
         }
     });
 });
-
-
