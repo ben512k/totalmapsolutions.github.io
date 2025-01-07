@@ -2,6 +2,7 @@
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
@@ -16,15 +17,14 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ✅ Let the browser handle ALL external links naturally
+// Avoid Freezing and Let Browser Handle External Links Natively
 document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
-    link.removeEventListener('click', () => {});  // Remove any previously bound listeners
-    link.onclick = null; // Clear any other event binding
+    link.setAttribute('rel', 'noopener noreferrer');  // Secure open
 });
 
-// ✅ Completely Disable Image Popups
+// Remove any interference with image popups
 document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null;
+    img.onclick = null;  // Remove previous event listeners or popups
 });
 
 // Form Handling (No Changes Needed)
