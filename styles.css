@@ -15,6 +15,11 @@
     text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
 }
 
+#home h1, #home p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
+}
+
 /* Portfolio Section */
 #portfolio {
     text-align: center;
@@ -28,7 +33,7 @@
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
     gap: 20px;
     max-width: 1200px;  /* Optional: Adjusts the max width of the portfolio container */
     margin: 0 auto;  /* Centers the grid on the page */
@@ -49,6 +54,7 @@
     border-radius: 8px;  /* Rounds the corners of the images */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the images */
 }
+
 
 
 
