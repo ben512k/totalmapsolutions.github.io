@@ -73,33 +73,28 @@ window.addEventListener('load', function () {
     }
 });
 
-// Get the modal
-var modal = document.getElementById("modal");
+// Select modal elements
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.querySelector(".close-btn");
 
-// Get the image elements
-var images = document.querySelectorAll(".portfolio-img");
-
-// Get the modal image and the close button
-var modalImg = document.getElementById("modal-img");
-var closeBtn = document.getElementsByClassName("close-btn")[0];
-
-// Loop through each image and add an event listener to open the modal
-images.forEach(function(image) {
-    image.onclick = function() {
-        // Set the source of the modal image to the clicked image's data-src
+// Add click event listener to each image
+document.querySelectorAll(".portfolio-img").forEach(img => {
+    img.onclick = function () {
         modal.style.display = "block";
-        modalImg.src = this.getAttribute("data-src");
-    }
+        modalImg.src = this.src;
+    };
 });
 
-// When the user clicks on the close button, close the modal
-closeBtn.onclick = function() {
+// Close the modal when clicking the close button
+closeBtn.onclick = function () {
     modal.style.display = "none";
-}
+};
 
-// When the user clicks anywhere outside the modal, close it
-window.onclick = function(event) {
+// Close modal when clicking outside the image
+window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
-}
+};
+
