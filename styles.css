@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+#home h1, #home p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
+}
+
+/* Portfolio Section */
 #portfolio {
     text-align: center;
     padding: 40px;
@@ -15,21 +21,27 @@
     font-size: 2.5em;
 }
 
-.portfolio-container {
+.portfolio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);  /* Two equal columns */
     gap: 20px;
-    justify-items: center;
+    justify-items: center;  /* Center the images */
     padding: 0 20px;
+}
+
+.portfolio-item {
+    display: flex;  /* Ensures the image fits well */
+    justify-content: center;
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
-    max-width: 700px; /* Optional: Ensure that images don't get too large */
+    max-width: 700px; /* Optional: Ensure images don’t get too large */
     max-height: 496px; /* Optional: Ensure images fit well */
-    border: 2px solid #ddd; /* Optional: Adds a border around each image */
-    border-radius: 10px; /* Optional: Adds rounded corners to images */
+    border: 2px solid #ccc;  /* Adds a light border */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
 
 
