@@ -1,24 +1,28 @@
-// Smooth Scrolling Effect for Header Links with Offset Handling
+// Smooth Scrolling Effect for Internal Links Only (Excludes External Links)
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
         const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const headerOffset = document.querySelector('header').offsetHeight;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition - headerOffset;
+        
+        // If it's an internal link, handle smooth scrolling
+        if (targetId.startsWith("#")) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            const headerOffset = document.querySelector('header').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - headerOffset;
 
-        window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+        // If it's an external link or opens a new tab, default behavior applies.
     });
 });
 
+// Form Handling Logic (No Changes Here)
 function handleFormSubmit(event) {
-    event.preventDefault(); 
-
+    event.preventDefault();
     var form = document.getElementById('contact-form');
     var formData = new FormData(form);
     
@@ -47,14 +51,13 @@ function resetForm() {
     document.getElementById('success-message').style.display = 'none';
 }
 
+// Fix for Loading Hash Links on Page Load
 window.addEventListener('load', function () {
     const hash = window.location.hash;
-    if (hash === '#contact') {
+    if (hash.startsWith("#")) {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
             const headerOffset = document.querySelector('header').offsetHeight;
-            const additionalOffset = 50;
-
             const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
             const offsetPosition = elementPosition - headerOffset;
 
@@ -66,22 +69,26 @@ window.addEventListener('load', function () {
     }
 });
 
-// Ensure smooth behavior and no freezing for images linking to new tabs
+// ✅ Ensure No Freeze for Portfolio Links
 document.querySelectorAll(".portfolio-item a").forEach(link => {
     link.addEventListener("click", function (event) {
-        if (link.getAttribute("target") !== "_blank") {
-            event.preventDefault(); // Prevent default only if not opening a new tab
-        } 
-        // If it is a new tab, let the default behavior proceed without interference
+        // Allow all external links and links with target="_blank" without interruption
+        if (link.getAttribute("target") === "_blank") {
+            return; 
+        }
+        // Prevent default action only if it’s an internal link
+        if (link.getAttribute("href").startsWith("#")) {
+            event.preventDefault();
+        }
     });
 });
 
-// Completely remove modal behavior for images
+// ✅ Completely Disable Modal Behavior
 document.querySelectorAll(".portfolio-img").forEach(img => {
-    img.onclick = null; // Ensure no event is bound
+    img.onclick = null; // Ensure no event listener on image click
 });
 
-// Close modal if it ever appears (failsafe)
+// Failsafe for Modal (If Still Present)
 const closeBtn = document.querySelector(".close-btn");
 if (closeBtn) {
     closeBtn.onclick = () => {
