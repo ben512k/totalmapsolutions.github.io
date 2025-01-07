@@ -98,3 +98,13 @@ window.onclick = function (event) {
     }
 };
 
+// Disable lightbox behavior
+document.querySelectorAll('.portfolio-item a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (link.getAttribute('target') === '_blank') {
+            event.stopPropagation();  // Prevent lightbox effect
+        }
+    });
+});
+
+
