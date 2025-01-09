@@ -663,3 +663,9 @@ footer {
 nav a {
     white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+    nav a {
+        font-size: 14px; /* Adjust as needed */
+    }
+}
