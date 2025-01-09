@@ -596,6 +596,10 @@ footer {
         font-size: 1.5rem;
     }
 
+    nav a {
+        white-space: nowrap;
+    }
+    
     nav .nav-links {
         flex-direction: column;
         align-items: flex-start;
@@ -604,6 +608,14 @@ footer {
     nav .nav-links li {
         margin-left: 0;
         margin-bottom: 10px;
+    }
+
+    nav a {
+        font-size: 14px; /* Adjust as needed */
+    }
+
+    header {
+        position: static; /* Removes the fixed positioning */
     }
 
     .hero-content h1 {
@@ -660,18 +672,3 @@ footer {
     pointer-events: none !important;
 }
 
-nav a {
-    white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-    nav a {
-        font-size: 14px; /* Adjust as needed */
-    }
-}
-
-@media (max-width: 768px) { 
-    header {
-        position: static; /* Removes the fixed positioning */
-    }
-}
