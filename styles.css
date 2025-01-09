@@ -637,6 +637,13 @@ footer {
         max-width: 90%;
     }
 
+    #contact-button {
+        border: none;         /* Remove the border */
+        box-shadow: none;     /* Remove any shadow effect */
+        background: none;     /* Optional: If the background is causing a box effect */
+        padding: 0;           /* Adjust padding if needed */
+    }
+
     #contact {
         flex-direction: column;
         padding: 50px 20px 50px;
