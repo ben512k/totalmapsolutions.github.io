@@ -659,3 +659,7 @@ footer {
     display: none !important;
     pointer-events: none !important;
 }
+
+nav a {
+    white-space: nowrap;
+}
