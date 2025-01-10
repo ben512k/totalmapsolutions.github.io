@@ -17,13 +17,11 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Handling Portfolio Item Clicks (New Tab)
+// Handling Portfolio Item Clicks (Fix for Duplicate Tabs)
 document.querySelectorAll('.portfolio-item a[target="_blank"]').forEach(link => {
     link.addEventListener('click', function(event) {
-        // Use `setTimeout` to open the link asynchronously, preventing blocking the UI thread
-        setTimeout(() => {
-            window.open(link.href, '_blank');
-        }, 0);
+        event.preventDefault();  // Prevent default link behavior
+        window.open(link.href, '_blank');  // Open the link in a new tab
     });
 });
 
