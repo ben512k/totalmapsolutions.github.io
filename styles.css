@@ -628,7 +628,7 @@ footer {
         max-width: 90%;
     }
 
-        .portfolio-item {
+    .portfolio-item {
         width: 100%; /* Ensure each portfolio item takes full width */
     }
 
