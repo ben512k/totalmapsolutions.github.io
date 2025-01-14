@@ -607,6 +607,7 @@ footer {
 
     header {
         position: static; /* Removes the fixed positioning */
+        height: 60px; /* Adjust this value to match your header's height */
     }
 
     .hero-content h1 {
