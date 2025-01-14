@@ -1,9 +1,15 @@
-// Smooth Scrolling for Internal Links
 function smoothScroll(target) {
     const element = document.querySelector(target);
-    const headerHeight = document.querySelector('header').offsetHeight;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const isMobile = window.innerWidth <= 768; // Adjust this breakpoint as needed
+    
+    let offsetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    
+    // Adjust offset for mobile devices
+    if (isMobile) {
+        offsetPosition -= headerHeight;
+    }
 
     window.scrollTo({
         top: offsetPosition,
@@ -14,19 +20,7 @@ function smoothScroll(target) {
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const headerHeight = document.querySelector('header').offsetHeight;
-            const isMobile = window.innerWidth <= 768;
-            const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (isMobile ? headerHeight : 0);
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+        smoothScroll(this.getAttribute('href'));
     });
 });
 
