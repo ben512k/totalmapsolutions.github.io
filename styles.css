@@ -17,10 +17,14 @@
     padding: 40px;
 }
 
+
 #portfolio h2 {
+    color: #43a047;
+    font-weight: bold;
+    text-transform: uppercase;
     margin-bottom: 40px;
-    font-size: 2.5em;
 }
+
 
 .portfolio {
     display: grid;
