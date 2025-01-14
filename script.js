@@ -14,17 +14,22 @@ function smoothScroll(target) {
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        smoothScroll(this.getAttribute('href'));
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const isMobile = window.innerWidth <= 768;
+            const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (isMobile ? headerHeight : 0);
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// Handling Portfolio Item Clicks (Fixed Duplicate Tabs)
-document.querySelectorAll('.portfolio-item a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        window.open(this.href, '_blank');
-    });
-});
 
 // Form Handling (No Changes Needed)
 function handleFormSubmit(event) {
