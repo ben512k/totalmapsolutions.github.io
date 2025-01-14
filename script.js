@@ -1,27 +1,28 @@
 // Smooth Scrolling for Internal Links
+function smoothScroll(target) {
+    const element = document.querySelector(target);
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+}
+
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const headerOffset = document.querySelector('header').offsetHeight;
-            const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
-
-            window.scrollBy({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+        smoothScroll(this.getAttribute('href'));
     });
 });
 
 // Handling Portfolio Item Clicks (Fixed Duplicate Tabs)
 document.querySelectorAll('.portfolio-item a').forEach(link => {
     link.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default behavior completely
-        window.open(this.href, '_blank'); // Open link manually in a new tab
+        event.preventDefault();
+        window.open(this.href, '_blank');
     });
 });
 
@@ -60,14 +61,8 @@ function resetForm() {
 window.addEventListener('load', function () {
     const hash = window.location.hash;
     if (hash.startsWith("#")) {
-        const targetElement = document.querySelector(hash);
-        if (targetElement) {
-            const headerOffset = document.querySelector('header').offsetHeight;
-            const offsetPosition = targetElement.getBoundingClientRect().top - headerOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'auto'
-            });
-        }
+        setTimeout(() => {
+            smoothScroll(hash);
+        }, 100);
     }
 });
