@@ -26,6 +26,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
     gap: 20px;
+    text-align: center;
     max-width: 1200px; /* Optional: You can adjust the max-width */
     margin: 0 auto; /* Centers the grid horizontally */
     padding: 0 20px;
@@ -381,12 +382,12 @@ nav .nav-links a:hover {
     align-items: center;
 }
 
-/*
+
 .card-content h4 span {
     font-size: 1.5rem;
     color: #43a047;
 }
-*/
+
 
 .card-content p {
     color: #666;
