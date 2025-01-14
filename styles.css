@@ -10,20 +10,6 @@
     text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
 }
 
-#home h1, #home p {
-    color: white;
-    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
-}
-
-#home h1, #home p {
-    color: white;
-    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
-}
-
-#home h1, #home p {
-    color: white;
-    text-shadow: 2px 2px 4px #000000, -2px -2px 4px #000000, 2px -2px 4px #000000, -2px 2px 4px #000000;
-}
 
 /* Portfolio Section */
 #portfolio {
@@ -336,7 +322,12 @@ nav .nav-links a:hover {
     border-bottom: 2px solid #eaeaea;
 }
 
-
+#services h2 { 
+    color: #43a047; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    margin-bottom: 10px; 
+}
 
 #services h3 {
     font-size: 2rem;
