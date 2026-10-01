@@ -51,8 +51,9 @@
 }
 
 .square-map {
-    height: 100%;
-    width: auto;
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {
