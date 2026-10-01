@@ -73,7 +73,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the images */
 }
 
-/* Square map: match the row height instead of the column width */
+/* Square map: take its height from the row (set by Map 1), width follows */
 .portfolio-item:has(.square-map) {
     position: relative;
 }
@@ -83,19 +83,19 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+    height: 100% !important;
+    width: auto !important;
+    max-width: none;
+    aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 768px) {
-    /* Single column: no neighbor to match, so go back to normal flow */
+    /* Single column: no neighbor to match, so use normal flow */
     .portfolio-item img.square-map {
         position: static;
         transform: none;
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: auto !important;
     }
 }
 
