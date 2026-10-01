@@ -50,6 +50,11 @@
     align-items: center;
 }
 
+.square-map {
+    height: 100%;
+    width: auto;
+}
+
 @media (max-width: 768px) {
     .portfolio-item {
         width: 100%;
