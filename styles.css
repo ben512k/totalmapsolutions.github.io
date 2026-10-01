@@ -29,6 +29,7 @@
 .portfolio {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
+    align-items: stretch;
     gap: 20px;
     text-align: center;
     max-width: 1200px; /* Optional: You can adjust the max-width */
@@ -47,7 +48,7 @@
 .portfolio-item {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .portfolio-item img {
@@ -56,10 +57,12 @@
 }
 
 .square-map {
+    height: 100% !important;
     width: auto !important;
-    height: 400px !important;
+    max-width: none !important;
     object-fit: contain;
 }
+
 
 @media (max-width: 768px) {
     .portfolio-item {
