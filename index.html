@@ -15,21 +15,6 @@
     </style>
 </head>
 
-    <script>
-function matchSquareMapHeight() {
-    const square = document.querySelector('.square-map');
-    const reference = document.querySelector('.portfolio-item img:not(.square-map)');
-
-    if (!square || !reference) return;
-
-    square.style.height = reference.getBoundingClientRect().height + 'px';
-    square.style.width = 'auto';
-}
-
-window.addEventListener('load', matchSquareMapHeight);
-window.addEventListener('resize', matchSquareMapHeight);
-</script>
-
 <body>
     <!-- Professional Header Section -->
     <header>
