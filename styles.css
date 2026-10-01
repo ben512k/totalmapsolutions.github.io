@@ -46,14 +46,18 @@
 
 .portfolio-item {
     display: flex;
-    justify-content: center;  /* Centers images within their container */
+    justify-content: center;
     align-items: center;
 }
 
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+}
+
 .square-map {
-    height: 500px;
-    width: 500px;
-    object-fit: contain;
+    width: auto !important;
+    height: 100% !important;
 }
 
 @media (max-width: 768px) {
