@@ -73,6 +73,32 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the images */
 }
 
+/* Square map: match the row height instead of the column width */
+.portfolio-item:has(.square-map) {
+    position: relative;
+}
+
+.portfolio-item img.square-map {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    /* Single column: no neighbor to match, so go back to normal flow */
+    .portfolio-item img.square-map {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media (max-width: 768px) {
     .portfolio-item img {
         max-width: 100%;
