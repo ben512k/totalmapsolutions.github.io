@@ -51,13 +51,14 @@
 }
 
 .portfolio-item img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 .square-map {
-    width: 100% !important;
-    height: auto !important;
+    width: auto !important;
+    height: 400px !important;
+    object-fit: contain;
 }
 
 @media (max-width: 768px) {
