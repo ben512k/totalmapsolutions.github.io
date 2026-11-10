@@ -29,10 +29,10 @@
 .portfolio {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
-    align-items: stretch;
+    align-items: start;
     gap: 20px;
     text-align: center;
-    max-width: 1200px; /* Optional: You can adjust the max-width */
+    max-width: 1200px;
     margin: 0 auto; /* Centers the grid horizontally */
     padding: 0 20px;
 }
@@ -46,14 +46,15 @@
 }
 
 .portfolio-item {
-    display: block;          /* no more flex stretching */
+    display: block;
 }
 
+/* All maps share the same box so they line up perfectly */
 .portfolio-item img {
     display: block;
     width: 100%;
     max-width: 700px;
-    aspect-ratio: 1.41;     /* pick one ratio for all maps */
+    aspect-ratio: 1.41 / 1;  /* matches the 5846 x 4133 Brazil map */
     height: auto;
     object-fit: contain;     /* shows the whole map, no cropping */
     background: #fff;        /* fills any letterbox space */
@@ -61,50 +62,6 @@
     border: 2px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .portfolio-item img {
-        max-width: 100%;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-    }
-}
-
-.portfolio-item img {
-    width: 100%;
-    max-width: 700px; /* Maximum width of the image */
-    height: auto; /* Ensures the image maintains aspect ratio */
-    border: 2px solid #ccc; /* Adds a light border around images */
-    border-radius: 8px; /* Adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the images */
-}
-
-/* Square map: take its height from the row (set by Map 1), width follows */
-.portfolio-item:has(.square-map) {
-    position: relative;
-}
-
-.portfolio-item img.square-map {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100% !important;
-    width: auto !important;
-    max-width: none;
-    aspect-ratio: 1 / 1;
-}
-
-@media (max-width: 768px) {
-    /* Single column: no neighbor to match, so use normal flow */
-    .portfolio-item img.square-map {
-        position: static;
-        transform: none;
-        width: 100% !important;
-        height: auto !important;
-    }
 }
 
 @media (max-width: 768px) {
