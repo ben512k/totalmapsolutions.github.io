@@ -46,21 +46,29 @@
 }
 
 .portfolio-item {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    display: block;          /* no more flex stretching */
 }
 
 .portfolio-item img {
+    display: block;
     width: 100%;
+    max-width: 700px;
+    aspect-ratio: 1.41;     /* pick one ratio for all maps */
     height: auto;
+    object-fit: contain;     /* shows the whole map, no cropping */
+    background: #fff;        /* fills any letterbox space */
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
 @media (max-width: 768px) {
-    .portfolio-item {
-        width: 100%;
+    .portfolio-item img {
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
     }
 }
 
